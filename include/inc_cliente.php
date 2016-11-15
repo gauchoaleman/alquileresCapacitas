@@ -1,16 +1,15 @@
-<?php
+<?php 
+require "inc_connectdb.php";
 
-echo "Variables:<br>";
-if( isset($_POST['nombre']))
-	echo $_POST['nombre']."<br>";
-if( isset($_POST['apellido']))
-	echo $_POST['apellido'];
-if( isset($_POST['email']))
-	echo $_POST['email']."<br>";
-if( isset($_POST['pasaporte']))
-	echo $_POST['pasaporte'];
-if( isset($_POST['dni']))
-	echo $_POST['dni']."<br>";
-if( isset($_POST['pais']))
-	echo $_POST['pais'];
-?>	
+extract($_POST);
+list($anio, $mes, $dia) = sscanf($fechaNacimiento, "%d-%d-%d");
+$query = "INSERT INTO cliente (nombre,apellido,email,dni,sexo,fechaNacimiento,telefono) 
+VALUES ('$nombre', '$apellido', '$email', '$dni', '$sexo', '$anio-$mes-$dia', '$telefono');";
+if( $SqlLink->query($query))
+	$mensaje="La inserción fue exitosa";
+else
+	$mensaje="La inserción fracasó";
+//phpinfo();
+//print $_SERVER['HTTP_HOST'];
+header("Location: http://".$_SERVER['HTTP_HOST']."/clientes.php?mensaje=".$mensaje);
+?>

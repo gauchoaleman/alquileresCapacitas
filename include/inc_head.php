@@ -16,22 +16,22 @@ require "inc_connectdb.php";
     <title>Alquileres CAPACITAS</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery-3.1.1.js" charset="UTF-8"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script type="/text/javascript" src="js/jquery-3.1.1.js" charset="UTF-8"></script>
 
     <!-- Para el Menú - Custom styles for this template -->
-    <link href="css/justified-nav.css" rel="stylesheet">
+    <link href="/css/justified-nav.css" rel="stylesheet">
 
     <!-- Para Datepicker -->
-    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-	<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+	<script type="text/javascript" src="/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="/js/ie-emulation-modes-warning.js"></script>
 	 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>
 	
   </head>
