@@ -7,42 +7,33 @@ Código del head que se incluye en todas las páginas
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
         <h3 class="text-muted"><a href="index.php">Alquiler CAPACITAS</a></h3>
+		<?php if( $_SESSION["loginId"])
+				echo "<a href='index.php?accion=logout'>Logout</a> / <a href='index.php?accion=cambiarclave'>Cambiar clave</a>";
+				?>
         <nav>
           <ul class="nav nav-justified">
             <li 
 			<?php
-			if( basename($_SERVER["SCRIPT_FILENAME"], '.php')=="disponibilidad")
+			if( basename($_SERVER["SCRIPT_FILENAME"], '.php')=="alquileres")
 				echo " class='active'";
 				?>><?php
-			if( basename($_SERVER["SCRIPT_FILENAME"], '.php')=="disponibilidad") 
+			if( basename($_SERVER["SCRIPT_FILENAME"], '.php')=="alquileres") 
 			{
-				echo "<a href='#'>Disponibilidad</a>";
+				echo "<a href='alquileres.php'>Alquileres</a>";
 			}
 			else 
 			{
-				echo "<a href='disponibilidad.php'>Disponibilidad</a>";
+				echo "<a href='alquileres.php'>Alquileres</a>";
 			}?>
 			</li>
-            <li<?php
-			if( basename($_SERVER["SCRIPT_FILENAME"], '.php')=="calendario")
-				echo " class='active'";
-				?>><?php
-			if( basename($_SERVER["SCRIPT_FILENAME"], '.php')=="calendario") 
-			{
-				echo "<a href='#'>Calendario</a>";
-			}
-			else 
-			{
-				echo "<a href='calendario.php'>Calendario</a>";
-			}?>
-			</li>
+            
             <li<?php
 			if( basename($_SERVER["SCRIPT_FILENAME"], '.php')=="recursos")
 				echo " class='active'";
 				?>><?php
 			if( basename($_SERVER["SCRIPT_FILENAME"], '.php')=="recursos") 
 			{
-				echo "<a href='#'>Recursos</a>";
+				echo "<a href='recursos.php'>Recursos</a>";
 			}
 			else 
 			{
@@ -55,7 +46,7 @@ Código del head que se incluye en todas las páginas
 				?>><?php
 			if( basename($_SERVER["SCRIPT_FILENAME"], '.php')=="clientes") 
 			{
-				echo "<a href='#'>Clientes</a>";
+				echo "<a href='clientes.php'>Clientes</a>";
 			}
 			else 
 			{

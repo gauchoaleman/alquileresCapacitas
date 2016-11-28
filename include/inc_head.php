@@ -1,8 +1,12 @@
 <?php
+session_start();
 /*
 Código del head que se incluye en todas las páginas
 */
 require "inc_connectdb.php";
+
+if (!isset($_SESSION["loginId"]))
+	header("Location: http://".$_SERVER['HTTP_HOST']."/loginForm.php");
 ?>
 <head>
    <meta charset="utf-8">
@@ -33,5 +37,7 @@ require "inc_connectdb.php";
     <script src="/js/ie-emulation-modes-warning.js"></script>
 	 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
-	
+	<style>
+	h5   {font-weight: bold;}
+	</style>
   </head>

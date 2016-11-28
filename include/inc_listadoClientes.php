@@ -1,49 +1,61 @@
-<?php
-	  	$ResultObject = mysqli_query($SqlLink,"SELECT * FROM cliente");
+<h1 align="right"><a href="/clientes.php?accion=agregarCliente">+</a></h5>
+<?
+	 $ResultObject = mysqli_query($SqlLink,"SELECT * FROM cliente");
 	
 	$ResultArray = array();
 	if (!$ResultObject) 
 		trigger_error("SQL Query failed: ".mysqli_error($SqlLink),E_USER_ERROR);
-	else 
+	else if($ResultObject->num_rows >0)
 	{
 ?>
- <h1 align="right"><a href="/clientes.php?accion=agregarCliente">+</a></h3>
+ 
 <div class="row">
-    <div class="col-sm-2" align="center" >
-<h3>
+    <div class="col-sm-1" align="center" >
+<h5>
+    &nbsp;
+</h5>    
+    </div>
+    <div class="col-sm-1" align="center" >
+<h5>
     Id
-</h3>    
+</h5>    
     </div>
     <div class="col-sm-2" align="center">
      
-    <h3>
+    <h5>
     Nombre
-	</h3>
+	</h5>
     </div>
 	<div class="col-sm-2" align="center">
      
-    <h3>
+    <h5>
     Apellido
-	</h3>
+	</h5>
 
     </div>
-	<div class="col-sm-2" align="center">
+	<div class="col-sm-1" align="center">
      
-    <h3>
+    <h5>
     DNI
-	</h3>
+	</h5>
+
+    </div>
+	<div class="col-sm-1" align="center">
+    <h5>
+    Sexo
+	</h5>
 
     </div>
     <div class="col-sm-2" align="center">
-        <h3>
+        <h5>
     Email
-	</h3>
+	</h5>
   </div> 
     
   <div class="col-sm-2" align="center">
-      <h3>
+      <h5>
    Fecha de nacimiento
-	</h3>	
+	</h5>	
   </div> 
 
 	<?
@@ -52,7 +64,14 @@
     ?>
 	 
 	   <div class="row">
-    <div class="col-sm-2" align="center">
+    <div class="col-sm-1" align="center">
+
+    <a href="clientes.php?accion=borrarCliente&idCliente=<?echo $obj->idCliente;?>">B</a>
+	<a href="clientes.php?accion=modificarCliente&idCliente=<?echo $obj->idCliente;?>">M</a>
+    
+		
+    </div>
+	<div class="col-sm-1" align="center">
 
     <?php echo $obj->idCliente; ?>
     
@@ -67,9 +86,14 @@
     <?php echo $obj->apellido; ?>
 
     </div>
-	<div class="col-sm-2" align="center">
+	<div class="col-sm-1" align="center">
      
     <?php echo $obj->dni; ?>
+
+    </div>
+	<div class="col-sm-1" align="center">
+     
+    <?php echo $obj->sexo; ?>
 
     </div>
     <div class="col-sm-2" align="center">
@@ -82,7 +106,7 @@
   </div> 
     
   </div>
-		<? }
+	<? }
 	}
 	 /* liberar el conjunto de resultados */
    	$ResultObject->close();?>
