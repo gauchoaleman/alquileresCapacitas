@@ -1,7 +1,26 @@
-Alquiler Capacitas
-===================
+Instituto Superior Capacitas
+----------------------------
 
-Probando StackEdit
+Carrera: Analista en Sistemas
+Año: 1ro.
+Asignatura: Práctica profesionalizante
+Profesor: Passalacqua, Lucas
+Apellido y nombre del alumno: Ronacher, Stefan
+Título del trabajo: Alquiler Capacitas
+Fecha de entrega: 29/11/2016
+<hr>
+<h2>Alquiler Capacitas</h2>
+<h3>Descripción</h3>
+Éste proyecto administra los recursos de varios tipos que posee una empresa de alquiler.
+<h3>Manual de usuario</h3>
+<h4>Login</h4>
+Al abrir la url del sitio aparece la pantalla de Login:
+![Login](img_readme/login.jpg)
+<h4>Sección clientes</h4>
+Al clickear en "Clientes" aparece un listado de los clientes ingresados:
+
+
+Este proyecto realizado en PHP/MySql 
 
 Hey! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I'm very helpful! I can be recovered anyway in the **Utils** tab of the <i class="icon-cog"></i> **Settings** dialog.
 
