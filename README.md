@@ -2,12 +2,19 @@ Instituto Superior Capacitas
 ----------------------------
 
 Carrera: Analista en Sistemas
+
 Año: 1ro.
+
 Asignatura: Práctica profesionalizante
+
 Profesor: Passalacqua, Lucas
+
 Apellido y nombre del alumno: Ronacher, Stefan
+
 Título del trabajo: Alquiler Capacitas
+
 Fecha de entrega: 29/11/2016
+
 <hr>
 <h2>Alquiler Capacitas</h2>
 <h3>Descripción</h3>
@@ -16,6 +23,7 @@ Fecha de entrega: 29/11/2016
 <h4>Login</h4>
 Al abrir la url del sitio aparece la pantalla de Login:
 ![Login](img_readme/login.jpg)
+
 Hay que ingresar nombre de usuario y clave para ingresar al sistema.
 <h4>Logout</h4>
 Para salir del sistema hacer click en "Logout" ubicado en el encabezado de la página:
@@ -35,7 +43,7 @@ Se borrará el cliente de la base de datos.
 Aparecerá un formulario para ingresar los datos del cliente:
  ![Modificar cliente](/img_readme/crearCliente.jpg)
 <h4>Sección Recursos</h4>
-	 - Al clickear en "Recursos" aparece un listado de los recursos ingresados:
+ - Al clickear en "Recursos" aparece un listado de los recursos ingresados:
 ![Listado de recursos](/img_readme/listadoRecursos.jpg)
  - Para editar un cliente clickear "M" de la primera columna.
 Aparecerá un formulario para modificar los datos del recurso:
@@ -57,14 +65,14 @@ Aparecerá un formulario para modificar los datos del alquiler:
 Aparecerá un formulario para ingresar los datos del alquiler:
 ![Crear alquileres](/img_readme/crearAlquiler.jpg)
 <h3>Guía de Instalación (Programadores)</h3>
-<h4>Requerimientos</h4>:
+<h4>Requerimientos</h4>
  - Apache
  - MySql
  - PHP
 <h4>Instalación</h4>
-Copiar archivos al DOCUMENT_ROOT
-Ejecutar los 2 scripts del directorio sql:
- - crearEstructura
- - insertarDatos
+ - Copiar archivos al DOCUMENT_ROOT
+ - Ejecutar los 2 scripts del directorio sql:
+	 - crearEstructura
+	 - insertarDatos
 En ése orden
-¡Voilá!
+¡y Voilá!
