@@ -12,6 +12,7 @@ function insertarRecursosAlquileres($recursos,$idAlquiler)
 }
 
 extract($_POST);
+	
 
 function obtenerPrecioTotal($recursos,$fechaInicio,$fechaFin){
 	global $SqlLink;

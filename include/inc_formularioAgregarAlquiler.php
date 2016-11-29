@@ -1,17 +1,17 @@
-<div class="container">
-<form name="form" method="POST" action="include/inc_alquiler.php" data-toggle="validator">
+<div>
+<form name="form" method="POST" action="/include/inc_alquiler.php" data-toggle="validator">
 	
 		<div class="row">
 		<div class="col-xs-4">
 		<div class="form-group">
 		<label for="exampleInputEmail1">Fecha inicio</label><br>
-			<input  type="datetime-local" name="fechaInicio">
+			<input required type="datetime-local" name="fechaInicio">
 		</div>	
 		</div>	
 		<div class="col-xs-4">
 		<div class="form-group">
 		<label for="exampleInputEmail1">Fecha fin</label><br>
-			<input  type="datetime-local" name="fechaFin">
+			<input required type="datetime-local" name="fechaFin">
 		</div> 
 		</div>
 		<div class="col-xs-4">
@@ -30,7 +30,7 @@
 $resultObject=$SqlLink->query($query);?>
     <?php 
 	while ($obj = $resultObject->fetch_object()){
-		echo "<input  type='checkbox' name='recursos[]' value='".$obj->idRecurso."'>".$obj->descripcion.", $".$obj->costoxHora." por hora </option><br>";
+		echo "<input  minchecked='1' type='checkbox' name='recursos[]' value='".$obj->idRecurso."'>".$obj->descripcion.", $".$obj->costoxHora." por hora </option><br>";
 	}
 	?>
   </div>	

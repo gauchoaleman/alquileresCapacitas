@@ -20,6 +20,7 @@ Fecha de entrega: 29/11/2016
 <h3>Descripción</h3>
 Éste proyecto administra los recursos de varios tipos que posee una empresa de alquiler.
 <h3>Manual de usuario</h3>
+Al completar formularios notará que hay validación de datos.
 <h4>Login</h4>
 Al abrir la url del sitio aparece la pantalla de Login:
 ![Login](img_readme/login.jpg)
@@ -37,7 +38,7 @@ Para cambiar clave hacer click en "Cambiar clave" ubicado en el encabezado de la
  - Para editar un cliente clickear "M" de la primera columna
 	Aparecerá un formulario para modificar los datos del cliente:
 	 ![Modificar cliente](/img_readme/modificarCliente.jpg)
- - Para borrar un cliente clickear "B"de la primera columna
+ - Para borrar un cliente clickear "B"de la primera columna.  
 Se borrará el cliente de la base de datos.
  - Para crear un cliente nuevo clieckear el "+" de arriba a la derecha.
 Aparecerá un formulario para ingresar los datos del cliente:
@@ -48,8 +49,8 @@ Aparecerá un formulario para ingresar los datos del cliente:
  - Para editar un cliente clickear "M" de la primera columna.
 Aparecerá un formulario para modificar los datos del recurso:
  ![Modificar recurso](/img_readme/modificarRecurso.jpg)
- - Para borrar un cliente clickear "B"de la primera columna
-Se borrará el recurso de la base de datos.
+ - Para borrar un cliente clickear "B"de la primera columna.  
+ Se borrará el recurso de la base de datos.
  - Para crear un recurso nuevo clickear el "+" de arriba a la derecha.
 Aparecerá un formulario para ingresar los datos del recurso:
  ![Crear recurso](/img_readme/crearRecurso.jpg)
@@ -59,7 +60,7 @@ Al clickear en "Alquileres" aparece un listado de los alquileres ingresados:
  - Para editar un alquiler clickear "M" de la primera columna
 Aparecerá un formulario para modificar los datos del alquiler:
 ![Modificar alquileres](/img_readme/modificarAlquiler.jpg)
- - Para borrar un alquiler clickear "B"de la primera columna
+ - Para borrar un alquiler clickear "B"de la primera columna.  
  Se borrará el alquiler de la base de datos.
  - Para crear un alquiler nuevo clickear el "+" de arriba a la derecha.
 Aparecerá un formulario para ingresar los datos del alquiler:
