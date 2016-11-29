@@ -33,7 +33,8 @@ CREATE TABLE `alquiler` (
   `fechaInicio` datetime DEFAULT NULL,
   `fechaFin` datetime DEFAULT NULL,
   `observaciones` varchar(256) DEFAULT NULL,
-  `precioTotal` float DEFAULT NULL
+  `precioTotal` float DEFAULT NULL,
+  PRIMARY KEY (`idAlquiler`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -49,7 +50,8 @@ CREATE TABLE `cliente` (
   `dni` varchar(9) NOT NULL,
   `sexo` varchar(10) NOT NULL,
   `fechaNacimiento` date NOT NULL,
-  `telefono` varchar(45) NOT NULL
+  `telefono` varchar(45) NOT NULL,
+  PRIMARY KEY (`idCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -59,7 +61,8 @@ CREATE TABLE `cliente` (
 
 CREATE TABLE `idtiporecurso` (
   `idTipoRecurso` int(11) NOT NULL,
-  `descripcion` varchar(100) DEFAULT NULL
+  `descripcion` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`idTipoRecurso`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -71,7 +74,8 @@ CREATE TABLE `recurso` (
   `idRecurso` int(11) NOT NULL,
   `idTipoRecurso` int(11) NOT NULL,
   `descripcion` varchar(100) NOT NULL,
-  `costoxHora` float DEFAULT NULL
+  `costoxHora` float DEFAULT NULL,
+  PRIMARY KEY (`idRecurso`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
@@ -82,7 +86,8 @@ CREATE TABLE `recurso` (
 CREATE TABLE `recursoalquiler` (
   `IdRecursoAlquiler` int(11) NOT NULL,
   `idAlquiler` int(11) NOT NULL,
-  `idRecurso` int(11) NOT NULL
+  `idRecurso` int(11) NOT NULL,
+  PRIMARY KEY (`idRecursoAlquiler`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -93,53 +98,6 @@ CREATE TABLE `recursoalquiler` (
 CREATE TABLE `usuario` (
   `idUsuario` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
-  `clave` varchar(100) NOT NULL
+  `clave` varchar(100) NOT NULL,
+  PRIMARY KEY (`idUsuario`)
 ) ENGINE=MyISAM DEFAULT CHARSET=big5;
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`idUsuario`, `nombre`, `clave`) VALUES
-(1, 'Stefan', 'Nafets'),
-(2, 'Lucas', 'Sacul');
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `alquiler`
---
-ALTER TABLE `alquiler`
-  ADD PRIMARY KEY (`idAlquiler`);
-
---
--- Indices de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`idCliente`);
-
---
--- Indices de la tabla `idtiporecurso`
---
-ALTER TABLE `idtiporecurso`
-  ADD PRIMARY KEY (`idTipoRecurso`);
-
---
--- Indices de la tabla `recurso`
---
-ALTER TABLE `recurso`
-  ADD PRIMARY KEY (`idRecurso`);
-
---
--- Indices de la tabla `recursoalquiler`
---
-ALTER TABLE `recursoalquiler`
-  ADD PRIMARY KEY (`IdRecursoAlquiler`);
-
---
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idUsuario`);

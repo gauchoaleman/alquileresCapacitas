@@ -55,3 +55,11 @@ INSERT INTO `recursoalquiler` (`IdRecursoAlquiler`, `idAlquiler`, `idRecurso`) V
 (48, 23, 21);
 
 -- --------------------------------------------------------
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `nombre`, `clave`) VALUES
+(1, 'Stefan', 'Nafets'),
+(2, 'Lucas', 'Sacul');
