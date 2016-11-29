@@ -24,7 +24,7 @@ $ResultObject = mysqli_query($SqlLink,$query);
     Id
 </h5>    
     </div>
-    <div class="col-sm-2" align="center">
+    <div class="col-sm-1" align="center">
      
   <h5>  
     Cliente
@@ -48,7 +48,7 @@ $ResultObject = mysqli_query($SqlLink,$query);
 	Obs.
 	</h5>
 </div>
-	<div class="col-sm-1" align="center">
+	<div class="col-sm-2" align="center">
       <h5>  
     Recursos
 	</h5>
@@ -81,7 +81,7 @@ $ResultObject = mysqli_query($SqlLink,$query);
     
 		
     </div>
-	<div class="col-sm-2" align="center">
+	<div class="col-sm-1" align="center">
 
     <?php echo $obj->nombre." ".$obj->apellido; ?>
     
@@ -105,7 +105,7 @@ $ResultObject = mysqli_query($SqlLink,$query);
     <?php echo $obj->observaciones; ?>
 
     </div>
-	<div class="col-sm-1" align="center">
+	<div class="col-sm-2" align="center">
      
     <?php mostrarRecursos($obj->idAlquiler); ?>
 
