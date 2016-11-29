@@ -10,7 +10,7 @@ if( isset($_POST["enviar"])){
 		
 		header("Location: http://".$_SERVER['HTTP_HOST']."/index.php");
 	}
-	else echo "Login no exitoso.";
+	else $mensaje="Login no exitoso.";
 }
 
 ?>
@@ -24,6 +24,8 @@ if( isset($_POST["enviar"])){
 
 <div class="container">
 <h3 class="text-muted">Alquiler CAPACITAS - Login</h3>
+<?if( isset($mensaje))
+	echo $mensaje;?>
 <div class="row">
     <div class="col-sm-3">
 <form method="POST" data-toggle="validator">
