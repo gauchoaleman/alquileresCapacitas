@@ -73,7 +73,8 @@ Aparecerá un formulario para ingresar los datos del alquiler:
 <h4>Instalación</h4>
  - Copiar archivos al DOCUMENT_ROOT
  - Ejecutar los 2 scripts del directorio sql:
-	 - crearEstructura
-	 - insertarDatos
+	 - crearEstructura.sql
+	 - insertarDatos.sql
+
 En ése orden
 ¡y Voilá!
