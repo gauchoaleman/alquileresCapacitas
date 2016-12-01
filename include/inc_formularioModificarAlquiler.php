@@ -20,6 +20,8 @@ $resultObjectDatosRecurso=$SqlLink->query($datosRecursosAlquilerQuery);
 //$datosAlquilerObj = $resultObjectDatosRecurso->fetch_object();
 ?>
 <div class="container">
+Los campos marcados con * son obligatorios
+
 <form name="form" method="POST" action="/include/inc_modificar_alquiler.php" data-toggle="validator">
 	
 		<div class="row">
@@ -29,7 +31,7 @@ $resultObjectDatosRecurso=$SqlLink->query($datosRecursosAlquilerQuery);
 		$expInicio = explode(" ", $datosAlquilerObj->fechaInicio);
 		$impInicio = implode( "T",$expInicio)
 		?>
-		<label for="exampleInputEmail1">Fecha inicio</label><br>
+		<label for="exampleInputEmail1">Fecha inicio (*)</label><br>
 			<input  type="datetime-local" required value="<? echo $impInicio;?>" name="fechaInicio">
 		</div>	
 		</div>	
@@ -39,7 +41,7 @@ $resultObjectDatosRecurso=$SqlLink->query($datosRecursosAlquilerQuery);
 		$expFin = explode(" ", $datosAlquilerObj->fechaFin);
 		$impFin = implode( "T",$expFin)
 		?>
-		<label for="exampleInputEmail1">Fecha fin</label><br>
+		<label for="exampleInputEmail1">Fecha fin (*)</label><br>
 			<input  type="datetime-local" required value="<? echo $impFin;?>" name="fechaFin">
 			
 		</div> 
@@ -73,7 +75,7 @@ $resultObject=$SqlLink->query($query);?>
 		<div class="form-group">
 		<?php $query = "SELECT * FROM cliente;";
 $resultObject=$SqlLink->query($query);?>
-<label for="exampleInputPassword1">Cliente</label><br>
+<label for="exampleInputPassword1">Cliente (*)</label><br>
 	<select required name="idCliente">
     <?php 
 	while ($objCliente = $resultObject->fetch_object()){

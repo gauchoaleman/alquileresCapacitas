@@ -48,7 +48,7 @@
 	<div class="row">
     <div class="col-sm-1" align="center">
 
-    <a href="recursos.php?accion=borrarRecurso&idRecurso=<?echo $obj->idRecurso;?>">B</a>&nbsp;
+    <a onclick="return confirm('Seguro que quiere borrar el recurso?')" href="recursos.php?accion=borrarRecurso&idRecurso=<?echo $obj->idRecurso;?>">B</a>&nbsp;
 	<a href="recursos.php?accion=modificarRecurso&idRecurso=<?echo $obj->idRecurso;?>">M</a>
     
 		

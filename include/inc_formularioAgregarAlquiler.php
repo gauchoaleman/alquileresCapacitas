@@ -1,16 +1,17 @@
 <div>
+Los campos marcados con * son obligatorios
 <form name="form" method="POST" action="/include/inc_alquiler.php" data-toggle="validator">
 	
 		<div class="row">
 		<div class="col-xs-4">
 		<div class="form-group">
-		<label for="exampleInputEmail1">Fecha inicio</label><br>
+		<label for="exampleInputEmail1">Fecha inicio (*)</label><br>
 			<input required type="datetime-local" name="fechaInicio">
 		</div>	
 		</div>	
 		<div class="col-xs-4">
 		<div class="form-group">
-		<label for="exampleInputEmail1">Fecha fin</label><br>
+		<label for="exampleInputEmail1">Fecha fin (*)</label><br>
 			<input required type="datetime-local" name="fechaFin">
 		</div> 
 		</div>
@@ -41,7 +42,7 @@ $resultObject=$SqlLink->query($query);?>
 		<div class="form-group">
 		<?php $query = "SELECT * FROM cliente;";
 $resultObject=$SqlLink->query($query);?>
-<label for="exampleInputPassword1">Cliente</label><br>
+<label for="exampleInputPassword1">Cliente (*)</label><br>
 	<select required name="idCliente">
     <?php 
 	while ($obj = $resultObject->fetch_object()){

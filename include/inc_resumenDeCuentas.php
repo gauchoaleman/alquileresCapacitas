@@ -1,14 +1,11 @@
 <br><form method="GET">Buscar:<input type="text" name="buscar"><input type="submit"></form><h1 align="right"><a href="/alquileres.php?accion=agregarAlquiler">+</a></h4>
 <?
 //Hacer 2 queries: uno este, otro que joinea idtiporecurso, recurso y cliente y alquiler para mostrar los recursos que coinciden.
-$query="SELECT * FROM alquiler a,cliente c WHERE a.idCliente=c.idCliente ";
-if( isset($_GET["buscar"])){
-	$buscar = $_GET["buscar"];
-	$query .= "AND (observaciones LIKE '%$buscar%' OR c.nombre LIKE '%$buscar%' OR c.apellido LIKE '%$buscar%');";
-}
+$query="SELECT *,DAY(fechaInicio) AS dia FROM alquiler a,cliente c WHERE a.idCliente=c.idCliente AND DATEDIFF(NOW(),fechaInicio)<= 7 ORDER BY fechaInicio DESC;";
 
 $ResultObject = mysqli_query($SqlLink,$query);
-		
+
+
 	
 	$ResultArray = array();
 	if (!$ResultObject) 
@@ -16,12 +13,12 @@ $ResultObject = mysqli_query($SqlLink,$query);
 	else if($ResultObject->num_rows >0)
 	{
 ?>
- 
+ <h2 align="center">RESUMEN DE CUENTAS</h2>
 <div class="row">
     <div class="col-sm-1" align="center" >
-
-    &nbsp;
-
+<h5>
+    Día del mes
+</h5>
     </div>
     <div class="col-sm-1" align="center" >
 <h5>
@@ -67,16 +64,16 @@ $ResultObject = mysqli_query($SqlLink,$query);
 
 
 	<?
-		while ($obj = $ResultObject->fetch_object())
-		{
-    ?>
+		$prevObjDia=0;
+		while ($obj = $ResultObject->fetch_object()) {?>
+		
 	 
 	   <div class="row">
     <div class="col-sm-1" align="center">
 
-    <a onclick="return confirm('Seguro que quiere borrar el alquiler?')" href="alquileres.php?accion=borrarAlquiler&idAlquiler=<?echo $obj->idAlquiler;?>">B</a>
-	<a href="alquileres.php?accion=modificarAlquiler&idAlquiler=<?echo $obj->idAlquiler;?>">M</a>
-    
+	<?if($obj->dia!=$prevObjDia) {
+	echo "$obj->dia";}
+		?>
 		
     </div>
 	<div class="col-sm-1" align="center">
@@ -121,7 +118,8 @@ $ResultObject = mysqli_query($SqlLink,$query);
    
     
   </div>
-	<? }
+	<? 
+	$prevObjDia=$obj->dia;}
 	}
 	 /* liberar el conjunto de resultados */
    	$ResultObject->close();

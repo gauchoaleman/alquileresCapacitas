@@ -7,8 +7,9 @@
   <body>
 
     <div class="container">
-<?php include "include/inc_menu.php"; ?>
-<?php 
+<?php include "include/inc_menu.php"; 
+
+if( isset($_GET["mensaje"]) ) echo $_GET["mensaje"];
 if( isset($_GET["accion"]) )
 	if($_GET["accion"] == "logout")	{
 		session_destroy();
@@ -17,13 +18,9 @@ if( isset($_GET["accion"]) )
 	else if($_GET["accion"] == "cambiarclave")	{
 		header("Location: http://".$_SERVER['HTTP_HOST']."/cambiarClave.php");
 	}
-?> 
-			
-<form>
 
-</form>
-
-      <!-- Site footer -->
+	include "include/inc_resumenDeCuentas.php"; 
+	?><!-- Site footer -->
       <footer class="footer">
         <p></p>
       </footer>

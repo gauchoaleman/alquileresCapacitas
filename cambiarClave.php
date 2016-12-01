@@ -6,7 +6,7 @@ if( isset($_POST["enviar"])){
 	//echo "en el if";
 	if( $_POST["clave1"]==$_POST["clave2"]){
 		if(cambiarClave($_POST)){
-			header("Location: http://".$_SERVER['HTTP_HOST']."/index.php");
+			header("Location: http://".$_SERVER['HTTP_HOST']."/index.php?mensaje=Cambio de clave exitoso");
 		}
 		else echo "Cambio de clave no exitoso.";
 	}

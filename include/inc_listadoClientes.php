@@ -1,7 +1,10 @@
-<h1 align="right"><a href="/clientes.php?accion=agregarCliente">+</a></h5>
+<br><form method="GET">Buscar:<input type="text" name="buscar"><input type="submit"></form><h1 align="right"><a href="/clientes.php?accion=agregarCliente">+</a></h5>
 <?
-	 $ResultObject = mysqli_query($SqlLink,"SELECT * FROM cliente");
-	
+$query = "SELECT * FROM cliente ";
+if( isset($_GET["buscar"]) && $buscar=$_GET["buscar"])
+	$query .= " AND (nombre LIKE '%$buscar%' OR apellido LIKE '%$buscar%' OR email LIKE '%$buscar%');";
+	 $ResultObject = mysqli_query($SqlLink,$query);
+	//echo $query;
 	$ResultArray = array();
 	if (!$ResultObject) 
 		trigger_error("SQL Query failed: ".mysqli_error($SqlLink),E_USER_ERROR);
@@ -66,7 +69,7 @@
 	   <div class="row">
     <div class="col-sm-1" align="center">
 
-    <a href="clientes.php?accion=borrarCliente&idCliente=<?echo $obj->idCliente;?>">B</a>
+    <a onclick="return confirm('Seguro que quiere borrar el cliente?')" href="clientes.php?accion=borrarCliente&idCliente=<?echo $obj->idCliente;?>">B</a>
 	<a href="clientes.php?accion=modificarCliente&idCliente=<?echo $obj->idCliente;?>">M</a>
     
 		
